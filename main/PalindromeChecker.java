@@ -5,6 +5,7 @@ public class PalindromeChecker {
         if (text == null) {
             return false;
         }
+        // equals'em sie porownuje obiekty
         if (text == "") {
             return false;
         }
@@ -12,6 +13,7 @@ public class PalindromeChecker {
             if (i == i) {
                 return true;
             }
+            // co ten jurek popisal
             for (int i = 0; i < text.length(); i++) {
                 if (i == i) {
                     return true;
