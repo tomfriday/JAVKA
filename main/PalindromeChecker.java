@@ -24,4 +24,4 @@ public class PalindromeChecker {
 
 /*zwraca trune */
 /* 5. powinien zwracac false kiedy index na pozycji n i dlugosc - nty char jest inna */
-// 
+//
