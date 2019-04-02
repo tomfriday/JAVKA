@@ -32,7 +32,7 @@ public class PalindromCheckerTest {
     @Test
     public void shouldReturnTrueWhenAllCharsSame() {
         // given
-        String tested = "aaaaa";
+        String tested = "aaaaaa";
         // when
         boolean result = PalindromeChecker.isPalindrome(tested);
         // then
@@ -40,9 +40,19 @@ public class PalindromCheckerTest {
     }
 
     @Test
+    public void shouldReturnFalseWhenAllCharsNotSame() {
+        // given
+        String tested = "aaaabaa";
+        // when
+        boolean result = PalindromeChecker.isPalindrome(tested);
+        // then
+        Assert.assertFalse(result);
+    }
+
+    @Test
     public void shouldReturnTrueWhenIndexedOnPositionNAndLengthMinusNCharIsTheSameOne() {
         // given
-        String tested = "oko";
+        String tested = "ookkoo";
         // when
         boolean result = PalindromeChecker.isPalindrome(tested);
         // then
