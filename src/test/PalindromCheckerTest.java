@@ -30,7 +30,7 @@ public class PalindromCheckerTest {
     }
 
     @Test
-    public void shouldReturnTrueWhenAllCharsSame() {
+    public void shouldReturnTrueWhenAllCharsTheSame() {
         // given
         String tested = "aaaaaa";
         // when
