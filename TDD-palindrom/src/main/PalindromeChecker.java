@@ -19,11 +19,8 @@ public class PalindromeChecker {
                 return false;
             }
         }
-
         return true;
-
     }
-
 }
 
 /*zwraca trune */
