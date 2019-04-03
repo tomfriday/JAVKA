@@ -7,7 +7,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class FabrykaTowaru {
 
-    public static final List<String> NAZWY_TOWAROW = Arrays.asList("samochod", "maslo", "slon", "kapusta", "komputer",
+    private static final List<String> NAZWY_TOWAROW = Arrays.asList("samochod", "maslo", "slon", "kapusta", "komputer",
             "telewizor", "zabawka", "majciochy", "skarpety", "gumowa kaczka", "mydlo", "pasta",
             "solniczka", "frytki", "samolot", "skuter", "zelazko", "doniczka", "parmezan");
 
