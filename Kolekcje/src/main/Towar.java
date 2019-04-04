@@ -6,15 +6,19 @@ public class Towar {
     private String nazwa;
     private LocalDate dataWaznosci;
 
+    @Override
+    public String toString() {
+        return
+                cena + " " + nazwa + "\n";
+    }
+
     public Towar(BigDecimal cena, String nazwa, LocalDate dataWaznosci) {
         this.cena = cena;
         this.nazwa = nazwa;
         this.dataWaznosci = dataWaznosci;
     }
 
-    public BigDecimal getCena() {
-        return cena;
-    }
+    public BigDecimal getCena() { return cena; }
 
     public void setCena(BigDecimal cena) {
         this.cena = cena;

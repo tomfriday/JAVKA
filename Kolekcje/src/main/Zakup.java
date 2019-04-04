@@ -7,16 +7,47 @@ public class Zakup {
     private static List<Towar> towary = new ArrayList<>();
 
     private static String cwiczenie1() {
+        for (int i = 0; i < 10; i++) {
+            towary.add(FabrykaTowaru.losowyTowar());
+        }
+        return towary.toString();
+
         // Dodaj 10 losowych towarow do zakupu
         // przy pomocy przeciazenia metody toString zwroc liste w formacie
         // *nazwa*::*cena* jeden pod drugim
-        return null;
     }
 
     private static String cwiczenie2() {
+
+        BigDecimal lowerPrice = towary.get(0).getCena().min(towary.get(1).getCena());
+        BigDecimal higherPrice = towary.get(0).getCena().max(towary.get(1).getCena());
+
+        for (int i = 1; i < 10; i++) {
+            lowerPrice = lowerPrice.min(towary.get(i).getCena());
+            higherPrice = higherPrice.max(towary.get(i).getCena());
+        }
+        int indexOfMostExpensiveElement = 0;
+        int indexOfLeastExpensiveElement = 0;
+
+        for (int i = 0; i < 10; i++) {
+            if (towary.get(i).getCena() == higherPrice) {
+                indexOfMostExpensiveElement = i;
+
+            }
+            if (towary.get(i).getCena() == lowerPrice) {
+                indexOfLeastExpensiveElement = i;
+
+            }
+        }
+
+        return String.valueOf(towary.get(indexOfMostExpensiveElement)) + String.valueOf(towary.get(indexOfLeastExpensiveElement));
+
         // podaj wraz z cena nazwy najtanszego i najdrozszego produktu
-        return null;
     }
+
+    // TROCHE WALKA BYLA,
+
+
 
     private static String cwiczenie3() {
         // posortuj towary alfabetycznie i wylistuj same nazwy
