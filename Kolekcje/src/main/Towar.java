@@ -9,7 +9,7 @@ public class Towar {
 
     @Override
     public String toString() {
-        return "\n" + nazwa + "::" + cena.setScale(2, RoundingMode.UP);
+        return "\n" + nazwa + "::" + "\n" + cena.setScale(2, RoundingMode.UP);
     }
 
     public Towar(BigDecimal cena, String nazwa, LocalDate dataWaznosci) {
@@ -18,7 +18,9 @@ public class Towar {
         this.dataWaznosci = dataWaznosci;
     }
 
-    public BigDecimal getCena() { return cena; }
+    public BigDecimal getCena() {
+        return cena;
+    }
 
     public void setCena(BigDecimal cena) {
         this.cena = cena;

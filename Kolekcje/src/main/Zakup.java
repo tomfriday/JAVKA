@@ -1,8 +1,6 @@
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 public class Zakup {
@@ -53,29 +51,55 @@ public class Zakup {
 
     private static String cwiczenie2Jaroslaw() {
         towary.sort(Comparator.comparing(Towar::getCena));
-        return towary.get(towary.size()-1) + towary.get(0).toString();
+        return towary.get(towary.size() - 1) + towary.get(0).toString();
     }
-
-    // 1 zapytac sie o returnowanie metody,
-    // 2 zmienne w petli a po za nią
 
 
     private static String cwiczenie3() {
+
         // posortuj towary alfabetycznie i wylistuj same nazwy
-        return null;
+
+        towary.sort(Comparator.comparing(Towar::getNazwa));
+        List<String> posortowaneTowary = new ArrayList<>();
+
+        for (int i = 0; i < towary.size(); i++) {
+            posortowaneTowary.add(towary.get(i).getNazwa() + "\n");
+        }
+        String sformatowanePosortowaneTowary = posortowaneTowary.toString()
+                .replace(",", "")
+                .replace("[", "")
+                .replace("]", "")
+                .trim();
+        return sformatowanePosortowaneTowary;
     }
+
+    //3cie done
 
     private static String cwiczenie4() {
         // podlicz sume zakupu, dodaj rabat 10% jezeli kwota ta bedzie wynosila ponad 5000
         // stworz testy pod logike
+
+
         return null;
     }
 
     private static boolean cwiczenie5() {
-        // sprawdz czy na liscie znajduje sie samochod, telewizor lub komputer
-        // zwroc w zaleznosci od tego true lub false
-        return false;
+        boolean wynik = true;
+        for (int i = 0; i < towary.size(); i++) {
+            if (towary.get(i).getNazwa() == "samochod" || towary.get(i).getNazwa() == "telewizor" || towary.get(i).getNazwa() == "komputer") {
+                wynik = true;
+                System.out.println(towary.get(i).getNazwa());
+                return wynik;
+            } else {
+                wynik = false;
+            }
+        }
+        return wynik;
     }
+// 5te zrobione, pytanie odnosnie skladni
+
+    // sprawdz czy na liscie znajduje sie samochod, telewizor lub komputer
+    // zwroc w zaleznosci od tego true lub false
 
     private static BigDecimal cwiczenie6() {
         // usun z listy przeterminowane towary, podaj wartosc strat
@@ -87,6 +111,7 @@ public class Zakup {
         System.out.println(cwiczenie1());
         System.out.println("\n------------2------------\n");
         System.out.println(cwiczenie2());
+        System.out.println(cwiczenie2Jaroslaw());
         System.out.println("\n------------3------------\n");
         System.out.println(cwiczenie3());
         System.out.println("\n------------4------------\n");
