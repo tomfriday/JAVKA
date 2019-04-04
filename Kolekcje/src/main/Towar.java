@@ -1,4 +1,5 @@
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 
 public class Towar {
@@ -8,8 +9,7 @@ public class Towar {
 
     @Override
     public String toString() {
-        return
-                cena + " " + nazwa + "\n";
+        return "\n" + nazwa + "::" + cena.setScale(2, RoundingMode.UP);
     }
 
     public Towar(BigDecimal cena, String nazwa, LocalDate dataWaznosci) {

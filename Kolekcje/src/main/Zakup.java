@@ -1,5 +1,6 @@
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -21,8 +22,6 @@ public class Zakup {
 
     private static String cwiczenie2() {
 
-        // podaj wraz z cena nazwy najtanszego i najdrozszego produktu
-
         BigDecimal lowerPrice = towary.get(0).getCena().min(towary.get(1).getCena());
         BigDecimal higherPrice = towary.get(0).getCena().max(towary.get(1).getCena());
 
@@ -40,19 +39,28 @@ public class Zakup {
             }
             if (towary.get(i).getCena() == lowerPrice) {
                 indexOfLeastExpensiveElement = i;
+
             }
         }
+
         return String.valueOf(towary.get(indexOfMostExpensiveElement)) + String.valueOf(towary.get(indexOfLeastExpensiveElement));
+
+        // podaj wraz z cena nazwy najtanszego i najdrozszego produktu
     }
 
     // TROCHE WALKA BYLA,
+    // NO WIDZE
+
+    private static String cwiczenie2Jaroslaw() {
+        towary.sort(Comparator.comparing(Towar::getCena));
+        return towary.get(towary.size()-1) + towary.get(0).toString();
+    }
+
     // 1 zapytac sie o returnowanie metody,
     // 2 zmienne w petli a po za nią
 
 
     private static String cwiczenie3() {
-
-
         // posortuj towary alfabetycznie i wylistuj same nazwy
         return null;
     }
