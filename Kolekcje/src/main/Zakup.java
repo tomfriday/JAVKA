@@ -1,5 +1,6 @@
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Zakup {
@@ -46,6 +47,12 @@ public class Zakup {
     }
 
     // TROCHE WALKA BYLA,
+    // NO WIDZE
+
+    private static String cwiczenie2Jaroslaw() {
+        towary.sort(Comparator.comparing(Towar::getCena));
+        return towary.get(towary.size()-1) + towary.get(0).toString();
+    }
 
 
 
@@ -76,6 +83,8 @@ public class Zakup {
         System.out.println(cwiczenie1());
         System.out.println("\n------------2------------\n");
         System.out.println(cwiczenie2());
+        System.out.println("\n------------2J------------\n");
+        System.out.println(cwiczenie2Jaroslaw());
         System.out.println("\n------------3------------\n");
         System.out.println(cwiczenie3());
         System.out.println("\n------------4------------\n");
