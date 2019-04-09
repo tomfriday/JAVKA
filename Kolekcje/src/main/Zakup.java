@@ -2,6 +2,8 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.time.LocalDate;
+import java.util.Date;
 
 public class Zakup {
 
@@ -102,8 +104,19 @@ public class Zakup {
     // zwroc w zaleznosci od tego true lub false
 
     private static BigDecimal cwiczenie6() {
+        LocalDate currentDate = LocalDate.now();
+        BigDecimal straty = new BigDecimal(0);
+
+        for (int i = 0; i < towary.size(); i++) {
+            if (towary.get(i).getDataWaznosci().isBefore(currentDate)) {
+                straty = straty.add(towary.get(i).getCena());
+                towary.remove(i);
+            }
+        }
+
+
         // usun z listy przeterminowane towary, podaj wartosc strat
-        return null;
+        return straty;
     }
 
     public static void main(String[] args) {
