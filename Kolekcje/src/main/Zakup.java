@@ -77,12 +77,24 @@ public class Zakup {
 
     //3cie done
 
-    private static String cwiczenie4() {
+    private static BigDecimal cwiczenie4() {
         // podlicz sume zakupu, dodaj rabat 10% jezeli kwota ta bedzie wynosila ponad 5000
         // stworz testy pod logike
 
+        BigDecimal sumaZakupu = new BigDecimal(0);
+        BigDecimal progRabatowy = new BigDecimal(5000);
+        BigDecimal rabat = new BigDecimal(0.9);
+        for (int i = 0; i < towary.size(); i++) {
+            if (towary.get(i).getCena().compareTo(progRabatowy) > 1) {
+                towary.get(i).setCena(towary.get(i).getCena().multiply(rabat));
+            }
+        }
+        sumaZakupu = towary.stream()
+                .map(Towar::getCena)
+                .reduce(BigDecimal::add)
+                .get();
+        return sumaZakupu;
 
-        return null;
     }
 
     private static boolean cwiczenie5() {
