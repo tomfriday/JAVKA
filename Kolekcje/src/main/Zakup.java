@@ -77,7 +77,7 @@ public class Zakup {
 
     //3cie done
 
-    private static BigDecimal cwiczenie4() {
+    private static String cwiczenie4() {
         // podlicz sume zakupu, dodaj rabat 10% jezeli kwota ta bedzie wynosila ponad 5000
         // stworz testy pod logike
 
@@ -93,7 +93,7 @@ public class Zakup {
                 .map(Towar::getCena)
                 .reduce(BigDecimal::add)
                 .get();
-        return sumaZakupu;
+        return "Utopilismy" + " " + sumaZakupu + " " +"na zakupy, w dypę janysza";
 
     }
 
