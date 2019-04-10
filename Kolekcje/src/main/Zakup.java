@@ -110,11 +110,13 @@ public class Zakup {
         for (int i = 0; i < towary.size(); i++) {
             if (towary.get(i).getDataWaznosci().isBefore(currentDate)) {
                 straty = straty.add(towary.get(i).getCena());
+                // System.out.println(towary.get(i).toString());
                 towary.remove(i);
             }
         }
+        // System.out.println(towary);
 
-
+        System.out.println("utopiliśmy tyle pieniedzy :");
         // usun z listy przeterminowane towary, podaj wartosc strat
         return straty;
     }
