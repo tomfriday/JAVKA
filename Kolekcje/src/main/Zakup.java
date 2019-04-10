@@ -81,6 +81,12 @@ public class Zakup {
         // podlicz sume zakupu, dodaj rabat 10% jezeli kwota ta bedzie wynosila ponad 5000
         // stworz testy pod logike
 
+
+        //aha ja zrobilem zeby sprawdzil czy jakas pojedyncza rzecz kosztuje wiecej niz 5000,
+        // jezeli tak to dodaje jej rabat 10%, takie drogie rzeczy sa ze 5k za wszystko to zwasze
+        // wychodzi wiecej xd
+
+
         BigDecimal sumaZakupu = new BigDecimal(0);
         BigDecimal progRabatowy = new BigDecimal(5000);
         BigDecimal rabat = new BigDecimal(0.9);
